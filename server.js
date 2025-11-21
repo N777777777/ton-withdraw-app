@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const MAINNET_RPC = "https://toncenter.com/api/v2/jsonRPC";
 const TESTNET_RPC = "https://testnet.toncenter.com/api/v2/jsonRPC";
@@ -181,6 +181,6 @@ app.get("/api/download-project", (req, res) => {
   archive.finalize();
 });
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`🚀 تطبيق TON يعمل على http://0.0.0.0:${PORT}`);
 });
