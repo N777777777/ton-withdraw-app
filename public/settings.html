@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات - تطبيق سحب TON</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>💎 تطبيق سحب TON</h1>
+            <div class="nav-links">
+                <a href="/">الرئيسية</a>
+                <a href="/settings.html" class="active">الإعدادات</a>
+                <a href="/withdraw.html">السحب</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>⚙️ حالة الإعدادات</h2>
+            <p>معلومات التطبيق والإعدادات المطلوبة</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 حالة الإعدادات الحالية</h3>
+            <div class="settings-status">
+                <div class="status-item">
+                    <span>كلمات المحفظة (WALLET_MNEMONIC):</span>
+                    <span id="walletStatus" class="status-badge">جاري التحميل...</span>
+                </div>
+                <div class="status-item">
+                    <span>الشبكة (NETWORK):</span>
+                    <span id="networkStatus" class="status-badge">جاري التحميل...</span>
+                </div>
+                <div class="status-item">
+                    <span>API Key (TONCENTER_API_KEY):</span>
+                    <span id="apiKeyStatus" class="status-badge">جاري التحميل...</span>
+                </div>
+                <div class="status-item">
+                    <span>العنوان المستقبل الافتراضي:</span>
+                    <span id="recipientStatus" class="status-badge">جاري التحميل...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box warning">
+            <h3>🔐 أمان معلوماتك مهم!</h3>
+            <p>لحماية كلمات محفظتك، نستخدم نظام <strong>Replit Secrets</strong> الآمن والمشفر.</p>
+            <p><strong>لا تدخل كلمات المحفظة في صفحات الويب!</strong></p>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 كيفية إضافة الإعدادات بشكل آمن:</h3>
+            <ol>
+                <li>في شريط Replit الجانبي، اضغط على أيقونة <strong>🔒 Secrets</strong></li>
+                <li>أضف المعلومات التالية كـ Secrets:</li>
+            </ol>
+            
+            <div class="secrets-list">
+                <div class="secret-item">
+                    <h4>WALLET_MNEMONIC (مطلوب)</h4>
+                    <p>24 كلمة من محفظة Tonkeeper مفصولة بمسافة</p>
+                    <code>كلمة1 كلمة2 كلمة3 ... كلمة24</code>
+                </div>
+                
+                <div class="secret-item">
+                    <h4>NETWORK (مطلوب)</h4>
+                    <p>نوع الشبكة: testnet أو mainnet</p>
+                    <code>mainnet</code> أو <code>testnet</code>
+                </div>
+                
+                <div class="secret-item">
+                    <h4>TONCENTER_API_KEY (اختياري)</h4>
+                    <p>احصل عليه من @tonapibot على Telegram</p>
+                    <small>يحسن السرعة ويمنع مشاكل Rate Limit</small>
+                </div>
+                
+                <div class="secret-item">
+                    <h4>RECIPIENT_ADDRESS (اختياري)</h4>
+                    <p>عنوان المحفظة المستقبلة الافتراضي</p>
+                    <code>EQD...</code>
+                </div>
+            </div>
+            
+            <ol start="3">
+                <li>بعد إضافة Secrets، سيعيد التطبيق تشغيل نفسه تلقائياً</li>
+                <li>اذهب إلى <a href="/withdraw.html">صفحة السحب</a> للبدء!</li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 كيفية الحصول على كلمات المحفظة:</h3>
+            <ol>
+                <li>افتح تطبيق <strong>Tonkeeper</strong></li>
+                <li>اذهب إلى الإعدادات</li>
+                <li>اضغط على <strong>عرض عبارة الاسترداد</strong></li>
+                <li>انسخ الـ 24 كلمة وأضفها كـ Secret في Replit</li>
+            </ol>
+        </div>
+
+        <div class="card download-section">
+            <h3>📦 تحميل المشروع</h3>
+            <p>قم بتحميل ملفات المشروع كلها كـ ZIP لاستخدامها على جهازك</p>
+            <button class="btn btn-primary" onclick="downloadProject()">
+                ⬇️ تحميل ملفات المشروع
+            </button>
+            <small style="display: block; margin-top: 1rem; color: rgba(255,255,255,0.9);">
+                📁 الملف يحتوي على: السيرفر، الواجهات، السكربت القديم، وجميع الملفات
+            </small>
+        </div>
+    </div>
+
+    <footer>
+        <p>تطبيق سحب TON - جميع الحقوق محفوظة © 2025</p>
+    </footer>
+
+    <script src="settings.js"></script>
+</body>
+</html>

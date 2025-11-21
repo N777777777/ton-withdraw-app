@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السحب - تطبيق سحب TON</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>💎 تطبيق سحب TON</h1>
+            <div class="nav-links">
+                <a href="/">الرئيسية</a>
+                <a href="/settings.html">الإعدادات</a>
+                <a href="/withdraw.html" class="active">السحب</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>💸 سحب TON</h2>
+            <p>قم بتحويل TON إلى أي محفظة</p>
+        </div>
+
+        <div class="balance-card" id="balanceCard">
+            <div class="balance-info">
+                <h3>💰 رصيدك الحالي</h3>
+                <div class="balance-amount" id="balance">جاري التحميل...</div>
+                <div class="wallet-address" id="walletAddress"></div>
+                <div class="network-badge" id="networkBadge"></div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="loadBalance()">🔄 تحديث</button>
+        </div>
+
+        <div class="card">
+            <form id="withdrawForm">
+                <div class="form-group">
+                    <label for="recipientAddress">عنوان المحفظة المستقبلة:</label>
+                    <input 
+                        type="text" 
+                        id="recipientAddress" 
+                        name="recipientAddress" 
+                        placeholder="EQDjVXa_oltdBP64Nc__p397xLCvGm2IcZ1ba7anSW0NAkeP"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">المبلغ (TON):</label>
+                    <input 
+                        type="number" 
+                        id="amount" 
+                        name="amount" 
+                        placeholder="0.1"
+                        step="0.001"
+                        min="0.001"
+                        required
+                    >
+                    <small id="amountInUsd"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="transferComment">رسالة التحويل (اختياري):</label>
+                    <input 
+                        type="text" 
+                        id="transferComment" 
+                        name="transferComment" 
+                        placeholder="مثال: دفعة شهرية"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                    إرسال التحويل
+                </button>
+            </form>
+
+            <div id="message" class="message"></div>
+        </div>
+
+        <div class="transaction-result" id="transactionResult" style="display: none;">
+            <h3>✅ تم إرسال المعاملة بنجاح!</h3>
+            <div class="result-details">
+                <p><strong>المبلغ المرسل:</strong> <span id="sentAmount"></span> TON</p>
+                <p><strong>إلى:</strong> <span id="sentRecipient"></span></p>
+                <p><strong>Sequence Number:</strong> <span id="seqno"></span></p>
+            </div>
+            <a id="explorerLink" href="#" target="_blank" class="btn btn-secondary">
+                🔍 مشاهدة المعاملة على Blockchain
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>تطبيق سحب TON - جميع الحقوق محفوظة © 2025</p>
+    </footer>
+
+    <script src="withdraw.js"></script>
+</body>
+</html>
